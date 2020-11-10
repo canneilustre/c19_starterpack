@@ -1,5 +1,7 @@
 version: "2.0"
+
 stories:
+
 - story: report_symptoms
   steps:
   - intent: greet
@@ -12,6 +14,19 @@ stories:
   - action: utter_reason_for_report
   - intent: reason_has_symptoms
   - action: utter_feel_bad
+
+- story: deny_privacy_goto_menu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_mainmenu
+  - intent: report_suspected_case
+  - action: utter_thanks_for_reporting
+  - action: utter_privacy_notice
+  - intent: deny
+  - action: utter_understand_end
+  - intent: mainmenu
+
 - story: deny_privacy_but_wants_to_restart
   steps:
   - intent: greet
