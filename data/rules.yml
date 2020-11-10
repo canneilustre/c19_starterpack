@@ -1,12 +1,21 @@
 version: "2.0"
-
+stories:
+- story: deny_privacy_goto_mainmenu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_mainmenu
+  - intent: report_suspected_case
+  - action: utter_thanks_for_reporting
+  - action: utter_privacy_notice
+  - intent: deny
+  - action: utter_understand_end
+  - intent: mainmenu
 rules:
-
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
-
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
