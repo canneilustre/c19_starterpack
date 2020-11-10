@@ -1,0 +1,93 @@
+version: "2.0"
+
+nlu:
+ 
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: mainmenu
+  examples: |
+    - MAIN MENU
+    - back to the menu
+    - i want to see other options
+    - menu pls
+    - what else can you do, Huma
+
+- intent: report_suspected_case
+  examples: |
+    - report suspected case
+    - REPORT COVID
+    - i tested positive for covid
+    - i have covid
+    - i want to report myself
+
+- intent: reason_has_symptoms
+  examples: |
+    - exhibiting symptoms
+    - i have covid symptoms
+    - im exhibiting covid-19 symptoms
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - uhuh
+    - yup
+    - continue
+    - continue report
+    - okay
+    - i agree
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - i disagree
+    - i don't agree
+
+- intent: restart_report
+  examples: |
+    - restart report
+    - i want to restart my report
+
+- intent: goodbye
+  examples: |
+    - bye now
+    - goodbye
+    - bye bye
+    - ciao
+
+## out of scope intents
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot
+    - are you a robot
+    - who are you Huma
+    - who is HuMa
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

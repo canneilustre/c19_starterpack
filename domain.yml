@@ -1,0 +1,75 @@
+version: "2.0"
+
+intents:
+  - greet
+  - mainmenu
+  - report_suspected_case
+  - reason_has_symptoms
+  - affirm
+  - deny
+  - restart_report
+  - goodbye
+  - bot_challenge
+    
+responses:
+  utter_greet:
+  - text: "Hey! I'm HuMa, your COVID-19 assistant."
+  - text: "Hi there! Hope all is well."
+  - text: "Hello!"
+
+  utter_mainmenu:
+  - text: "How can I help you today?"
+    channel: slack
+    buttons:
+    - title: "report suspected case"
+      payload: "/report_suspected_case"
+    
+  utter_thanks_for_reporting:
+  - text: "Thank you for coming to us with this information."
+  - text: "Thanks for the initiative to report this!"
+
+  utter_privacy_notice:
+  - text: "Privacy Notice \n You are notified that by continuing through this process, [name of org] is collecting certain data about you in order to facilitate COVID-19 contact tracing efforts within the organization. \n [name of org] will not disclose your data to third parties but may use your data to comply with its legal obligations with the Department of Health (DOH). \n For additional information, to request access to or a copy of your personal data, or to request certain data be removed or corrected, you may contact [insert name, title, and contact information of designated employee]."
+    channel: slack
+    buttons:
+    - title: "Continue report"
+      payload: "/affirm"
+    - title: "End report"
+      payload: "/deny"
+
+  utter_reason_for_report:
+  - text: "Why are you reporting yourself?"
+    channel: slack
+    buttons:
+    - title: "exhibiting symptoms"
+      payload: "/reason_has_symptoms"
+
+  utter_understand_end:
+  - text: "I wish we could change your mind. Your report would definitely help us stop the spread of COVID-19."
+    channel: slack
+    buttons:
+    - title: "back to main menu"
+      payload: "/mainmenu"
+    - title: "restart report"
+      payload: "/restart_report"
+    - title: "end report"
+      payload: "/goodbye"
+
+  utter_restart:
+  - text: "Great! Let's restart."
+  - text: "Awesome. Let's do this."
+
+  utter_feel_bad:
+  - text: "I'm sorry to hear this. We're here to help."
+
+  utter_goodbye:
+  - text: "Bye then!"
+  - text: "Good bye!"
+  - text: "Talk to you later."
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Human Managed."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
